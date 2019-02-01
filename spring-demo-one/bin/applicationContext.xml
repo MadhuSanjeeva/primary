@@ -10,15 +10,15 @@
 <context:property-placeholder  location="classpath:sport.properties"/>
 
 <!-- define your bean -->
-<bean id="myFortuneService" class="com.luv2code.springdemo.HappyFortuneService"></bean>
+<bean id="myFortuneService" class="com.practice.springdemo.HappyFortuneService"></bean>
 
-<bean id="myCoach" class="com.luv2code.springdemo.TrackCoach">
+<bean id="myCoach" class="com.practice.springdemo.TrackCoach">
 <!-- constructor injection -->
 	<constructor-arg ref="myFortuneService"/>
 </bean>
 
 <!-- setter injection -->
-<bean id="myCricketCoach" class="com.luv2code.springdemo.CricketCoach">
+<bean id="myCricketCoach" class="com.practice.springdemo.CricketCoach">
 	<property name="fortuneService" ref="myFortuneService"></property>
 	
 	<!-- injecting literal values -->
