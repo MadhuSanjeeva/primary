@@ -3,11 +3,11 @@ package com.practice.springannotaions;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HappyFortuneService implements FortuneService {
+public class DatabaseFortuneService implements FortuneService {
 
 	@Override
 	public String getFortune() {
-		return "HappyFortuneService : Today is your lucky day";
+		return "Database Fortune Service";
 	}
 
 }

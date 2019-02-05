@@ -2,7 +2,7 @@ package com.practice.springannotaions;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AnnotationDemoApp {
+public class AnnotationBeanScopeDemoApp {
 
 	public static void main(String[] args) {
 		//load the spring configuration file
@@ -10,12 +10,16 @@ public class AnnotationDemoApp {
 				
 		//retrieve the bean
 		Coach theCoach = context.getBean("tennisCoach", Coach.class);
-				
-		//calls method in the bean
-		System.out.println(theCoach.getDailyWorkout());
 		
-		//calls the method to get fortune
-		System.out.println(theCoach.getDailyFortune());
+		Coach alphaCoach = context.getBean("tennisCoach", Coach.class);
+				
+		boolean result = (theCoach == alphaCoach);
+		
+		System.out.println("\n Pointing to the same object : "+result);
+		
+		System.out.println("\n Memory location for theCoach object : "+theCoach.hashCode());
+		
+		System.out.println("\n Memory location for alphaCoach object : "+alphaCoach.hashCode());
 		
 		//close the context
 		context.close();
